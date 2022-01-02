@@ -1,7 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import UserList from './components/User.js'
+import Footer from './components/Footer.js'
+import Menu from './components/Menu.js'
 import axios from 'axios'
 
 
@@ -48,8 +50,9 @@ class App extends React.Component {
    render () {
        return (
            <div>
-            
-            <UserList users={this.state.users} />
+              <Menu/>
+              <UserList users={this.state.users} />
+              <Footer/>
            </div>
        )
    }
