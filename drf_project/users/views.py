@@ -15,7 +15,7 @@ class UserLimitOffsetPagination(LimitOffsetPagination):
        default_limit = 2
 
 class CustomUserModelViewSet(ViewSet):
-    # renderer_classes = [JSONRenderer]
+  
 
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserModelSerializer
