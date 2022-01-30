@@ -12,7 +12,7 @@ from rest_framework.pagination import LimitOffsetPagination
 # Create your views here.
 
 class UserLimitOffsetPagination(LimitOffsetPagination):
-       default_limit = 2
+       default_limit = 1
 
 class CustomUserModelViewSet(ViewSet):
   
@@ -30,5 +30,10 @@ class CustomUserModelViewSet(ViewSet):
     def retrieve(self, request, pk=None):
         user = get_object_or_404(CustomUser, pk=pk)
         serializer = CustomUserModelSerializer(user)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        users = CustomUser.objects.all()
+        serializer = CustomUserModelSerializer(users, many=True)
         return Response(serializer.data)
 

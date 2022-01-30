@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {HashRouter, Route, Link, BrowserRouter} from 'react-router-dom'
 
 
         const Menu = () => {
@@ -12,14 +13,17 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
                             <div class="collapse navbar-collapse" id="navbarExample01">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                                    <Link class="nav-link" aria-current="page" to='/users'>Пользователи</Link>
+                                    {/* <a class="nav-link" aria-current="page" href="#">Home</a> */}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Login</a>
+                                    <Link class="nav-link" aria-current="page" to='/projects'>Проекты</Link>
+                                    {/* <a class="nav-link" href="#">Login</a> */}
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
+                                    <Link class="nav-link" aria-current="page" to='/todos'>Задачи</Link>
+                                    {/* <a class="nav-link" href="#">About</a> */}
                                 </li>
                                 </ul>
                             </div>

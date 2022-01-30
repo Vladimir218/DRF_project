@@ -8,7 +8,7 @@ class ProjectLimitOffsetPagination(LimitOffsetPagination):
        default_limit = 10
 
 class ToDoLimitOffsetPagination(LimitOffsetPagination):
-       default_limit = 20
+       default_limit = 1
 
 class ProjectModelViewSet(ModelViewSet):
     queryset = Project.objects.all()
@@ -36,6 +36,9 @@ class ToDoModelViewSet(ModelViewSet):
     # организация фильтрации через библиотеку DjangoFilter
     filterset_fields = ['project_id']
 
-    
+    # def get_serializer_class(self):
+    #     if self.request.method in ['GET']:
+    #         return ToDoReadSerializer
+    #     return ToDoSerializer
 
     

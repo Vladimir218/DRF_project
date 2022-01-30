@@ -22,7 +22,9 @@ const UserItem = ({user}) => {
 }
 
 const UserList = ({users}) => {
+    console.log({users})
     return (
+        
         <table class="table">
             <thead>
                 <tr>
