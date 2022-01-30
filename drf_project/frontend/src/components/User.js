@@ -1,12 +1,14 @@
 import React from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom'
 
 
 const UserItem = ({user}) => {
    return (
             <tr>
                 <td>
-                    {user.username}
+                    <Link to={`user/${user.username}`}>{user.username}</Link>
+                    {/* {user.username} */}
                 </td>
                 <td>
                     {user.first_name}
@@ -22,7 +24,9 @@ const UserItem = ({user}) => {
 }
 
 const UserList = ({users}) => {
+    console.log({users})
     return (
+        
         <table class="table">
             <thead>
                 <tr>
